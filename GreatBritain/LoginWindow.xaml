@@ -1,0 +1,62 @@
+﻿<Window x:Class="GreatBritain.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GreatBritain"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="250" Width="400"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        ResizeMode="NoResize">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="Beige"/>
+        <Image Source="Resources/school_logo.png"
+               Margin="10"
+               HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="0" Text="Great Britain"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Background="{StaticResource additional}"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   FontFamily="JetBrains Mono"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Style="{StaticResource item_textblock}"
+                Grid.Row="1"
+                Text="Логин"
+                Margin="20 0"
+                VerticalAlignment="Center" Width="100"/>
+            <TextBox x:Name="txbLogin"
+                       Grid.Column="1"
+                       Width="200" Height="30"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <TextBlock Style="{StaticResource item_textblock}" Grid.Row="2" Grid.Column="0" 
+                       Text="Пароль" Margin="20 0"
+                VerticalAlignment="Center" Width="100"/>
+            <PasswordBox  x:Name="txbPassword" Height="30" Width="200"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+            <Button Width="100" Height="30"
+                            Content="OK"
+                            x:Name="btnOK"
+                            Click="btnOkClick"/>
+            <Button Width="100" Height="30"
+                            Content="Отмена"
+                            x:Name="btnCancel"
+                            Click="btnCancelClick"/>
+        </StackPanel>
+    </Grid>
+    
+</Window>
